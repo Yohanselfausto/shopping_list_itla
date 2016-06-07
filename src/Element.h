@@ -1,23 +1,53 @@
-/*
- * Element.h
- *
- *  Created on: May 22, 2016
- *      Author: raydelto
- */
-
-#ifndef ELEMENT_H_
-#define ELEMENT_H_
+#ifndef ELEMENT_H
+#define ELEMENT_H
 #include <string>
+
+using namespace std;
+
 class Element
 {
-	public:
-		Element(std::string name);
+    public:
+        Element(int cod, string name, int quantity);
+        virtual ~Element();
 
-	private:
-		Element* _next;
-		std::string _name;
-		//This means that List can access to all private members of this class
-		friend class List;
+    int getCod(){
+        return cod;
+    }
+
+    void setCod(int cod){
+        this -> cod = cod;
+    }
+
+    string getName(){
+        return name;
+    }
+
+    void setName(string name){
+        this -> name = name;
+    }
+
+    int getQuantity(){
+        return quantity;
+    }
+
+    void setQuantity(int Quantity){
+        this -> quantity = quantity;
+    }
+
+    Element* getNext(){
+        return next;
+    }
+
+    void setNext (Element* Next){
+        this -> next = next;
+    }
+
+private:
+    int cod;
+    string name;
+    int quantity;
+    Element* next;
+
 };
 
-#endif /* ELEMENT_H_ */
+#endif // ELEMENTO_H
